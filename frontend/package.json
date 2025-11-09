@@ -1,0 +1,17 @@
+{
+  "name": "promptlaew-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "lucide": "^0.553.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5"
+  }
+}
