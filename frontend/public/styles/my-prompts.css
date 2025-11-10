@@ -1,0 +1,28 @@
+.body {
+    border: solid 2px white;
+    height: 1245px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 120px 0px 120px;
+}
+
+.hero {
+    border: solid 2px white;
+    width: 1272px;
+    display: flex;
+    gap: 16px;
+}
+
+.create {
+    width: 163px;
+    height: 43px;
+    border-radius: 100px;
+    border: none;
+    padding: 12px 24px 12px 24px;
+    background-color: #524FF0;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+}
