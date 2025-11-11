@@ -10,3 +10,9 @@ hamburger.addEventListener("click", () => {
 closeNav.addEventListener("click", () => {
     nav.classList.toggle("active");
 });
+
+// Create Prompt
+const createBtn = document.getElementById("create");
+createBtn.addEventListener("click", () => {
+    window.location.href = "create.html";
+});

@@ -21,16 +21,17 @@
         </button>
 
         <nav class="nav" id="nav">
+            <img id="nav-x" class="nav-x" src="assets/x.svg" alt="">
             <div class="nav-left">
                 <a class="menu" href="index.html">Explore</a>
                 <a class="menu" href="my-prompts.html">Your Prompts</a>
                 <a class="menu" href="about.html">About</a>
             </div>
             <div class="nav-right">
+                <a class="menu" href="register.html">Sign Up</a>
                 <a class="menu" href="login.html">
                     <div class="signin-btn">Sign In</div>
                 </a>
-                <a class="menu" href="register.html">Sign Up</a>
             </div>
         </nav>
     </header>
@@ -68,15 +69,7 @@
         </div>
     </main>
 
-    <script>
-        // Toggle menu visibility on mobile
-        const hamburger = document.getElementById("hamburger");
-        const nav = document.getElementById("nav");
+    <script type="module" src="scripts/main.js"></script>
 
-        hamburger.addEventListener("click", () => {
-            nav.classList.toggle("active");
-            hamburger.classList.toggle("active");
-        });
-    </script>
 </body>
 </html>
