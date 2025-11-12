@@ -55,15 +55,16 @@ export async function getOnePrompt(id) {
 }
 
 // FiterPrompt
-export async function getMyPrompt(id) {
+export async function getMyPrompt(token) {
    try {
      const response = await fetch(BACKEND_URL + '/api/prompt/filter', {
         method: "POST",
         headers: {
-        "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({
-            "user_id": id
+        
         })
      });
 
