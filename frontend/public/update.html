@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/create.css">
+    <title>PromptLaew - Update</title>
 </head>
 <body>
-    
+    <header class="header">
+        <div class="logo">
+            <img src="assets/brain.svg" alt="">
+            <p>PromptLaew</p>
+        </div>
+
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav">
+            <img id="nav-x" class="nav-x" src="assets/x.svg" alt="">
+            <div class="nav-left">
+                <a class="menu" href="index.html">Explore</a>
+                <a class="menu" href="my-prompts.html">Your Prompts</a>
+                <a class="menu" href="about.html">About</a>
+            </div>
+            <div class="nav-right">
+                <a class="menu" href="register.html">Sign Up</a>
+                <a class="menu" href="login.html">
+                    <div class="signin-btn">Sign In</div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="body">
+        <p class="page-title">Update Prompt</p>
+        
+        <!-- This container holds the whole form -->
+        <div class="prompt-container">
+            <div class="prompthead">
+                <p>Basic Information</p>
+            </div>
+            <div class="promptbody">
+                <!-- This version shows an image -->
+                <div id="image-box" class="imageinput">
+                    <img id="preview-image" src="assets/upload.svg" width="36px" height="36px" alt="">
+                    <p id="upload-text">Drag your file here</p>
+                    <input type="file" id="imageinput" hidden>
+                    <button type="button" id="browse-btn">Browse File</button>
+                </div>
+                
+                <!-- This div wraps the form fields -->
+                <div class="form-content">
+                    <div class="form-group-1">
+                        <p class="form-label">Title</p>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group-2">
+                        <p class="form-label">Prompt</p>
+                        <textarea class="form-input" id="prompt-textarea"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button id="create">Update</button>
+                        <button id="delete">
+                            <img src="assets/trash-2.svg" width="16px" height="16px" alt="">
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/pages/update.js"></script>
+
 </body>
 </html>

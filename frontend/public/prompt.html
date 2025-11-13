@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/prompt.css" />
+  <title>PromptLaew</title>
 </head>
 <body>
-    
+  <header class="header">
+        <div class="logo">
+            <img src="assets/brain.svg" alt="">
+            <p>PromptLaew</p>
+        </div>
+
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav">
+            <img id="nav-x" class="nav-x" src="assets/x.svg" alt="">
+            <div class="nav-left">
+                <a class="menu" href="index.html">Explore</a>
+                <a class="menu" href="my-prompts.html">Your Prompts</a>
+                <a class="menu" href="about.html">About</a>
+            </div>
+            <div class="nav-right">
+                <a class="menu" href="register.html">Sign Up</a>
+                <a class="menu" href="login.html">
+                    <div class="signin-btn">Sign In</div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+  <main class="body">
+    <p class="page-title">Generate Image</p>
+
+    <div class="context">
+      <div class="bigPromptCard">
+        <div class="image"></div>
+        <div class="describe">
+          <div id="profilename">
+            <div class="profile-icon"></div>
+            <p>Name</p>
+          </div>
+          <p id="prompt">Girl in Red Dress</p>
+        </div>
+      </div>
+
+      <div class="prompt">
+        <div class="prompthead">
+          <p>AI Image Generator</p>
+        </div>
+
+        <div class="promptbody">
+            <div id="image-box" class="imageinput">
+                <img id="preview-image" src="assets/upload.svg" width="36px" height="36px" alt="">
+                <p id="upload-text">Drag your file here</p>
+                <input type="file" id="imageinput" hidden>
+                <button type="button" id="browse-btn">Browse File</button>
+            </div>
+
+          <div class="input-group">
+            <p class="label">Prompt</p>
+            <textarea class="textbox" placeholder="Type your prompt here..."></textarea>
+          </div>
+
+          <div class="input-group">
+            <p class="label">Additional Input (Optional)</p>
+            <textarea class="textbox" style="height: 100px;" placeholder="Add more details..."></textarea>
+          </div>
+
+          <button id="generateimage">
+            <img src="assets/wand-sparkles.svg" width="16px" height="16px" alt="">
+            <p>
+                Generate Image
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="scripts/main.js"></script>
+  <script type="module" src="scripts/pages/prompt.js"></script>
+
 </body>
 </html>

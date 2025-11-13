@@ -1,6 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
 import dotenv from "dotenv";
-import multer from "multer";
 import fs from "fs";
 
 dotenv.config();
@@ -10,10 +9,10 @@ const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
 export const generateImageHandler = async (req, res) => {
   try {
     const { prompt } = req.body;
-    const imagePath = req.file.path;
+    const imageFile = req.file.path;
 
     // Read file in buffer
-    const imageData = fs.readFileSync(imagePath);
+    const imageData = fs.readFileSync(imageFile);
     const base64Image = imageData.toString("base64");
 
     const contents = [
@@ -43,7 +42,14 @@ export const generateImageHandler = async (req, res) => {
       }
     }
 
-    fs.unlinkSync(imagePath); // Delete file done
+    fs.unlinkSync(imageFile); // Delete file done
+
+    if (!savedImageBase64) {
+      return res.status(400).json({
+        success: false,
+        message: "No generated image data returned.",
+      });
+    }
 
     res.status(200).json({
       success: true,
