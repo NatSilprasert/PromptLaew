@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const titleInput = form.querySelector(".form-group-1 .form-input");
   const promptTextarea = form.querySelector("#prompt-textarea");
   const clearBtn = document.getElementById("clear");
+  const createBtn = document.getElementById("create");
 
   let selectedFile = null;
 
@@ -66,6 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    createBtn.disabled = true;
+    createBtn.innerHTML = `
+        <div class="spinner"></div> Creating...
+    `;
+
     try {
         const newPrompt = await createPrompt(title, prompt, selectedFile, token);
 
@@ -74,6 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
         console.error("Error creating prompt:", error);
         alert(error.message)
+    } finally {
+        createBtn.disabled = false;
+        createBtn.innerHTML = `
+            <p>
+                Create
+            </p>
+        `;
     }
   })
 });
