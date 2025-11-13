@@ -38,13 +38,10 @@ export async function getAllPrompt() {
    }
 }
 
-export async function getOnePrompt(id, token) {
+export async function getOnePrompt(id) {
    try {
      const response = await fetch(BACKEND_URL + `/api/prompt/${id}`, {
         method: "GET",
-        headers: {
-            "Authorization": `Bearer ${token}`
-        },
      });
 
      const data = await response.json();
