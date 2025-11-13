@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PromptLaew | About</title>
 
-  <!-- ใช้สไตล์หลักเดิม + สไตล์หน้า About -->
+  <!--  About -->
   <link rel="stylesheet" href="styles/main.css" />
   <link rel="stylesheet" href="styles/about.css" />
 </head>
 <body>
-  <!-- Header: คัดลอกโครงจากหน้าอื่นให้เหมือนเดิม -->
+  <!-- Header  -->
   <header class="header">
     <div class="logo">
-      <img src="assets/brain.svg" alt="" />
+      <img src="assets/brain.svg" alt="">
       <p>PromptLaew</p>
     </div>
 
-    <button class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
     </button>
 
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Primary">
       <img id="nav-x" class="nav-x" src="assets/x.svg" alt="">
       <div class="nav-left">
         <a class="menu" href="index.html">Explore</a>
@@ -30,9 +30,7 @@
       </div>
       <div class="nav-right">
         <a class="menu" href="register.html">Sign Up</a>
-        <a class="menu" href="login.html">
-          <div class="signin-btn">Sign In</div>
-        </a>
+        <a class="menu" href="login.html"><div class="signin-btn">Sign In</div></a>
       </div>
     </nav>
   </header>
@@ -42,75 +40,109 @@
     <section class="about-hero">
       <p class="eyebrow">ABOUT</p>
       <h1 class="title">Make viral prompts usable for everyone</h1>
-      <p class="subtitle">PromptLaew helps you find, tweak, and generate AI images fast — with clean UX, curated prompts, and shareable results.</p>
+      <p class="subtitle">
+        PromptLaew helps you explore, tweak, and generate AI images fast — with a clean UX,
+        curated prompts, and shareable results. Powered by Google Gemini.
+      </p>
     </section>
 
-    <!-- How it works -->
+    <!-- Mission & Values (default) -->
     <section class="about-section">
-      <h2 class="section-title">How it works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Explore</h3>
-          <p>Browse trending prompts from the community.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Customize</h3>
-          <p>Adjust styles, seeds, and key parameters easily.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Generate</h3>
-          <p>Create images using your configured prompt.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>Share</h3>
-          <p>Save or share your results with a single link.</p>
-        </div>
+      <h2 class="section-title">Our mission</h2>
+      <div class="lead">
+        We make high-quality, community-tested prompts accessible and practical for everyone.
+        No noise. No hassle. Just results.
       </div>
-    </section>
 
-    <!-- Features / Value props -->
-    <section class="about-section">
-      <h2 class="section-title">Why PromptLaew</h2>
       <div class="feature-grid">
         <article class="card">
           <h3>Curated & Organized</h3>
-          <p>Prompts are categorized and reviewed so you can find what works without digging through noise.</p>
-        </article>
-        <article class="card">
-          <h3>Creator Credits</h3>
-          <p>We respect authorship. Each prompt highlights its original creator when available.</p>
+          <p>Find effective prompts faster with categories and human review.</p>
         </article>
         <article class="card">
           <h3>Simple by Design</h3>
-          <p>Clean, fast UI that gets out of your way. Less fiddling, more generating.</p>
+          <p>Minimal clicks, clear parameters, and a lightweight UI.</p>
         </article>
         <article class="card">
-          <h3>Built for Mobile</h3>
-          <p>Responsive layout works beautifully across phones, tablets, and desktops.</p>
+          <h3>Creator Credits</h3>
+          <p>We highlight original authors wherever available.</p>
+        </article>
+        <article class="card">
+          <h3>Mobile-first</h3>
+          <p>Responsive layout that feels great on phones and desktops.</p>
         </article>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- Team  -->
+    <section class="about-section" id="team">
+      <h2 class="section-title">Team</h2>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">S</div>
+          <div class="info">
+            <h3>Sarus Suanploy</h3>
+            <p class="id">Student ID: 6730493521</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">N</div>
+          <div class="info">
+            <h3>Nat Silprasert</h3>
+            <p class="id">Student ID: 6730149721</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">J</div>
+          <div class="info">
+            <h3>Jomphol Trongpanich</h3>
+            <p class="id">Student ID: 6730063321</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">K</div>
+          <div class="info">
+            <h3>Korapat Phukitirat</h3>
+            <p class="id">Student ID: 6730007221</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ  -->
     <section class="about-section">
       <h2 class="section-title">FAQ</h2>
       <div class="faq">
         <details>
           <summary>Is it free to browse prompts?</summary>
-          <p>Yes. You can explore and view prompts freely. Some features may require sign-in.</p>
+          <p>Yes. Browsing is free. Some actions may require sign-in.</p>
         </details>
         <details>
           <summary>Which model powers image generation?</summary>
-          <p>Currently we integrate with a Gemini-based backend for image generation in this project setup.</p>
+          <p>We connect to a Gemini-based backend for image generation in this setup.</p>
         </details>
         <details>
-          <summary>Can I submit my own prompts?</summary>
-          <p>Yes. Create an account, then submit and manage your prompts from <em>Your Prompts</em>.</p>
+          <summary>Can I submit my prompts?</summary>
+          <p>Yes. Create an account, then add and manage your prompts in <em>Your Prompts</em>.</p>
         </details>
+      </div>
+    </section>
+
+    <!-- Contact & Policy  -->
+    <section class="about-section contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <a href="mailto:hello@promptlaew.app">natsilprasert@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <h3>Policy</h3>
+          <p>Users own their content. We keep minimal logs to prevent abuse and remove by request.</p>
+        </div>
       </div>
     </section>
 
@@ -119,12 +151,4 @@
       <h2>Ready to try?</h2>
       <p>Sign up in seconds and start generating.</p>
       <div class="cta-actions">
-        <a class="btn" href="register.html">Get Started</a>
-        <a class="btn ghost" href="index.html">Explore Prompts</a>
-      </div>
-    </section>
-  </main>
-
-  <script type="module" src="scripts/main.js"></script>
-</body>
-</html>
+        <a class="btn" href="register.html">Get Started
