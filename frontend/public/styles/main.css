@@ -430,3 +430,9 @@ button:disabled {
     opacity: 0.7;
     cursor: not-allowed;
 }
+
+button.loading {
+    pointer-events: none;
+    /* ป้องกันการกดซ้ำ */
+}
+
