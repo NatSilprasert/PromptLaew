@@ -63,7 +63,7 @@ generateBtn.addEventListener("click", async () => {
 
     try {
         const imageUrl = await generateImage(finalPrompt, imageFile);
-        window.location.href = `redirect.html?imageUrl=${encodeURIComponent(imageUrl)}`;
+        if (imageUrl) window.location.href = `redirect.html?imageUrl=${encodeURIComponent(imageUrl)}`;
 
     } catch (err) {
         console.error("Failed to generate image:", err);
