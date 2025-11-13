@@ -47,7 +47,7 @@ export const createPrompt = async (req, res) => {
 
 export const getAllPrompt = async (req, res) => {
   try {
-    const prompts = await promptModel.find().sort({ createdAt: -1 });;
+    const prompts = await promptModel.find().sort({ updatedAt: -1 });;
 
     return res.status(200).json({
       success: true,
@@ -115,7 +115,7 @@ export const getFilterPrompt = async (req, res) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const userId = decoded.id;
 
-        const userPrompts = await promptModel.find({ createdBy: userId }).sort({ createdAt: -1 });
+        const userPrompts = await promptModel.find({ createdBy: userId }).sort({ updatedAt: -1 });
 
         return res.status(200).json({
         success: true,
