@@ -1,3 +1,5 @@
+import { getOnePrompt } from "../api.js";
+
 const urlParams = new URLSearchParams(window.location.search);
 const promptId = urlParams.get("id");
 const token = localStorage.getItem("token");
@@ -40,7 +42,7 @@ async function loadPrompt() {
   if (!promptId) return;
   
   try {
-    const prompt = await getOnePrompt(promptId);
+    const { prompt , user } = await getOnePrompt(promptId);
       
     titleInput.value = prompt.title || "";
     promptTextarea.value = prompt.prompt || "";
