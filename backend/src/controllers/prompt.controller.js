@@ -47,7 +47,7 @@ export const createPrompt = async (req, res) => {
 
 export const getAllPrompt = async (req, res) => {
   try {
-    const prompts = await promptModel.find();
+    const prompts = await promptModel.find().sort({ createdAt: -1 });;
 
     return res.status(200).json({
       success: true,

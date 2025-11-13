@@ -1,19 +1,21 @@
 import { getAllPrompt } from "../api.js";
 
 const list = document.getElementById("promptCardSection");
+const searchBox = document.getElementById("search-input");
 
-async function renderPrompts() {
-  const prompts = await getAllPrompt();
+let allPrompts = [];
+
+async function renderPrompts(promptsToRender) {
   list.innerHTML = "";
 
-  prompts.forEach(p => {
+  promptsToRender.forEach(p => {
     const card = document.createElement("div");
     card.className = "promptCard";
 
     const img = document.createElement("img");
     img.className = "prompt-image";
     img.alt = p.title || "Prompt image";
-      img.src = p.imageUrl || "assets/placeholder.png";
+    img.src = p.imageUrl || "assets/placeholder.png";
 
     const btn = document.createElement("button");
     btn.className = "prompt-btn";
@@ -32,4 +34,19 @@ async function renderPrompts() {
   });
 }
 
-renderPrompts();
+async function init() {
+  allPrompts = await getAllPrompt();
+  renderPrompts(allPrompts);
+}
+
+// ฟัง event จากช่อง search
+searchBox.addEventListener("input", e => {
+  const query = e.target.value.toLowerCase();
+  const filtered = allPrompts.filter(p => 
+    p.title?.toLowerCase().includes(query) ||
+    p.prompt?.toLowerCase().includes(query)
+  );
+  renderPrompts(filtered);
+});
+
+init();
